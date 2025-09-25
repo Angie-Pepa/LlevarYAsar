@@ -36,24 +36,24 @@ const productos = [
 
   // Entrañas
   {
-    id: 5, nombre: "Entraña 2", descripcion: "Perfecta para un asado familiar, gran sabor.",
+    id: 5, nombre: "Entraña", descripcion: "Perfecta para un asado familiar, gran sabor.",
     precio: 13490, imagen: "img/entrania2.jpg", stock: 10, stockCritico: 3, categoria: "Entrañas"
   },
   // Lomo Liso
   {
-    id: 7, nombre: "Lomo Liso 1", descripcion: "Clásico corte magro, jugoso al grill.",
+    id: 7, nombre: "Lomo Liso", descripcion: "Clásico corte magro, jugoso al grill.",
     precio: 15990, imagen: "img/lomo-liso1.jpg", stock: 15, stockCritico: 4, categoria: "Lomo Liso"
   },
 
   // Longanizas
   {
-    id: 10, nombre: "Longaniza 1", descripcion: "Artesanal con especias tradicionales.",
+    id: 10, nombre: "Longaniza ", descripcion: "Artesanal con especias tradicionales.",
     precio: 6990, imagen: "img/longaniza1.jpg", stock: 25, stockCritico: 8, categoria: "Longanizas"
   },
 
   // Punta de Ganso
   {
-    id: 13, nombre: "Punta de Ganso 1", descripcion: "Tradicional chileno, jugoso y sabroso.",
+    id: 13, nombre: "Punta de Ganso ", descripcion: "Tradicional chileno, jugoso y sabroso.",
     precio: 18990, imagen: "img/punta-ganso1.jpg", stock: 12, stockCritico: 3, categoria: "Punta de Ganso"
   },
 ];
