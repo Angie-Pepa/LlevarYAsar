@@ -48,7 +48,7 @@ const productos = [
   // Longanizas
   {
     id: 10, nombre: "Longaniza ", descripcion: "Artesanal con especias tradicionales.",
-    precio: 6990, imagen: "img/longaniza1.jpg", stock: 25, stockCritico: 8, categoria: "Longanizas"
+    precio: 6990, imagen: "img/longaniza2.jpg", stock: 25, stockCritico: 8, categoria: "Longanizas"
   },
 
   // Punta de Ganso
