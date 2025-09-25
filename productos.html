@@ -1,43 +1,76 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Productos - Llevar & Asar</title>
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productos - Llevar & Asar</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header>
-        <div class="logo">Llevar & Asar</div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="productos.html">Productos</a></li>
-                <li><a href="nosotros.html">Nosotros</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="login.html">Iniciar Sesión</a></li>
-                <li><a href="registro.html">Registro</a></li>
-                <li><a href="#" class="cart-icon">🛒 <span class="cart-count">0</span></a></li>
-            </ul>
-        </nav>
+  <header>
+    <div class="logo">Llevar & Asar</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="login.html">Iniciar Sesión</a></li>
+        <li><a href="registro.html">Registro</a></li>
+        <li><a href="carrito.html" class="cart-icon">🛒 <span class="cart-count">0</span></a></li>
+        </ul>
+    </nav>
     </header>
 
     <main>
-        <section>
-            <h1>Nuestros Productos</h1>
-            <p>Selecciona tu favorito y llévalo a casa. ¡Todo listo para asar!</p>
-            <div id="productos-container">
-                <!-- Los productos se cargarán aquí con JavaScript -->
-                <p>Cargando productos...</p>
-            </div>
-        </section>
+    <section>
+        <h1>Nuestros Productos</h1>
+        <p>Selecciona tu favorito y llévalo a casa. ¡Todo listo para asar!</p>
+
+        <!-- Contenedor donde se cargarán dinámicamente los productos -->
+        <div id="productos-container">
+        <p>Cargando productos...</p>
+        </div>
+    </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Llevar & Asar - Todos los derechos reservados</p>
+    <p>&copy; 2025 Llevar & Asar - Todos los derechos reservados</p>
     </footer>
 
+    <!-- Scripts -->
     <script src="js/productos.js"></script>
+    <script>
+    // Mostrar los productos en la página
+    function mostrarProductos() {
+        const contenedor = document.getElementById('productos-container');
+        contenedor.innerHTML = '';
+
+        productos.forEach(p => {
+        const card = document.createElement('article');
+        card.classList.add('producto');
+
+        card.innerHTML = `
+            <figure class="producto__media">
+            <img src="${p.imagen}" alt="${p.nombre}" loading="lazy" style="max-width:200px; border-radius:8px;">
+            </figure>
+            <h3 class="producto__titulo">${p.nombre}</h3>
+            <p class="producto__descripcion">${p.descripcion}</p>
+            <p class="producto__precio">$${p.precio.toLocaleString('es-CL')}</p>
+            <p>Stock: ${p.stock} ${p.stock <= p.stockCritico ? '⚠' : ''}</p>
+            <button class="producto__btn" onclick="agregarAlCarrito(${p.id})">Agregar al carrito</button>
+        `;
+
+        contenedor.appendChild(card);
+        });
+    }
+
+    // Inicializar productos
+    document.addEventListener('DOMContentLoaded', mostrarProductos);
+    </script>
+
+    <!-- Script general con funciones del carrito -->
     <script src="js/script.js"></script>
 </body>
 </html>
