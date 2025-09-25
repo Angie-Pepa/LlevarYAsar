@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Llevar & Asar - Los Mejores Cortes para Llevar</title>
+    <title>Iniciar Sesión - Llevar & Asar</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -23,26 +23,26 @@
     </header>
 
     <main>
-        <section id="hero">
-            <h1>¡Bienvenidos a Llevar & Asar!</h1>
-            <p>Los mejores cortes, asados y productos cárnicos para llevar. ¡Sabor que se lleva en el alma!</p>
-            <button onclick="location.href='productos.html'">Ver Nuestros Productos</button>
-        </section>
-
-        <section id="featured-products">
-            <h2>Productos Destacados</h2>
-            <div id="productos-container">
-                <!-- Los productos se cargarán aquí con JavaScript -->
-                <p>Cargando productos...</p>
-            </div>
+        <section>
+            <h1>Iniciar Sesión</h1>
+            <p>Ingresa tus datos para acceder a tu cuenta y realizar pedidos.</p>
+            <form id="form-login">
+                <label>Email:</label>
+                <input type="email" name="email" maxlength="100" required placeholder="usuario@duoc.cl">
+                
+                <label>Contraseña:</label>
+                <input type="password" name="password" required placeholder="••••••">
+                
+                <button type="submit">Iniciar Sesión</button>
+                <p>¿No tienes cuenta? <a href="registro.html">Regístrate aquí</a></p>
+            </form>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Llevar & Asar - Todos los derechos reservados | Calidad que se lleva y se asa</p>
+        <p>&copy; 2025 Llevar & Asar - Todos los derechos reservados</p>
     </footer>
 
-    <script src="js/productos.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
