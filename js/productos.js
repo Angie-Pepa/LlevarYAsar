@@ -36,30 +36,13 @@ const productos = [
 
   // Entrañas
   {
-    id: 4, nombre: "Entraña 1", descripcion: "Corte tierno y jugoso, ideal para la parrilla.",
-    precio: 12990, imagen: "img/entrania1.jpg", stock: 12, stockCritico: 3, categoria: "Entrañas"
-  },
-  {
     id: 5, nombre: "Entraña 2", descripcion: "Perfecta para un asado familiar, gran sabor.",
     precio: 13490, imagen: "img/entrania2.jpg", stock: 10, stockCritico: 3, categoria: "Entrañas"
   },
-  {
-    id: 6, nombre: "Entraña 3", descripcion: "Corte premium con marmoleo equilibrado.",
-    precio: 13990, imagen: "img/entrania3.jpg", stock: 8, stockCritico: 2, categoria: "Entrañas"
-  },
-
   // Lomo Liso
   {
     id: 7, nombre: "Lomo Liso 1", descripcion: "Clásico corte magro, jugoso al grill.",
     precio: 15990, imagen: "img/lomo-liso1.jpg", stock: 15, stockCritico: 4, categoria: "Lomo Liso"
-  },
-  {
-    id: 8, nombre: "Lomo Liso 2", descripcion: "Versátil, perfecto para asar o al sartén.",
-    precio: 16490, imagen: "img/lomo-liso2.jpg", stock: 10, stockCritico: 3, categoria: "Lomo Liso"
-  },
-  {
-    id: 9, nombre: "Lomo Liso 3", descripcion: "Textura suave y excelente sabor.",
-    precio: 16990, imagen: "img/lomo-liso3.jpg", stock: 7, stockCritico: 2, categoria: "Lomo Liso"
   },
 
   // Longanizas
@@ -67,32 +50,12 @@ const productos = [
     id: 10, nombre: "Longaniza 1", descripcion: "Artesanal con especias tradicionales.",
     precio: 6990, imagen: "img/longaniza1.jpg", stock: 25, stockCritico: 8, categoria: "Longanizas"
   },
-  {
-    id: 11, nombre: "Longaniza 2", descripcion: "Sabor intenso, perfecta para la parrilla.",
-    precio: 7490, imagen: "img/longaniza2.jpg", stock: 20, stockCritico: 6, categoria: "Longanizas"
-  },
-  {
-    id: 12, nombre: "Longaniza 3", descripcion: "Receta casera, ideal para picoteo o sándwich.",
-    precio: 7990, imagen: "img/longaniza3.jpg", stock: 18, stockCritico: 5, categoria: "Longanizas"
-  },
 
   // Punta de Ganso
   {
     id: 13, nombre: "Punta de Ganso 1", descripcion: "Tradicional chileno, jugoso y sabroso.",
     precio: 18990, imagen: "img/punta-ganso1.jpg", stock: 12, stockCritico: 3, categoria: "Punta de Ganso"
   },
-  {
-    id: 14, nombre: "Punta de Ganso 2", descripcion: "Gran sabor y suavidad, especial parrilla.",
-    precio: 19490, imagen: "img/punta-ganso2.jpg", stock: 10, stockCritico: 3, categoria: "Punta de Ganso"
-  },
-  {
-    id: 15, nombre: "Punta de Ganso 3", descripcion: "Premium, equilibrio de grasa y carne.",
-    precio: 19990, imagen: "img/punta-ganso3.jpg", stock: 9, stockCritico: 2, categoria: "Punta de Ganso"
-  },
-  {
-    id: 16, nombre: "Punta de Ganso 4", descripcion: "Sabor intenso, ideal para asados largos.",
-    precio: 20490, imagen: "img/punta-ganso4.jpg", stock: 6, stockCritico: 2, categoria: "Punta de Ganso"
-  }
 ];
 
 // ========= Carrito =========
