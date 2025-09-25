@@ -42,7 +42,7 @@ const productos = [
   // Lomo Liso
   {
     id: 7, nombre: "Lomo Liso", descripcion: "Clásico corte magro, jugoso al grill.",
-    precio: 15990, imagen: "img/lomo-liso1.jpg", stock: 15, stockCritico: 4, categoria: "Lomo Liso"
+    precio: 15990, imagen: "img/lomo-liso2.jpg", stock: 15, stockCritico: 4, categoria: "Lomo Liso"
   },
 
   // Longanizas
