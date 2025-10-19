@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Llevar & Asar</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Llevar & Asar</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="login.html">Iniciar Sesión</a></li>
+                <li><a href="registro.html">Registro</a></li>
+                <li><a href="#" class="cart-icon">🛒 <span class="cart-count">0</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h1>Registro de Usuario</h1>
+            <p>Regístrate para realizar pedidos, guardar tus datos y acceder a promociones exclusivas.</p>
+            <form id="form-usuario">
+                <label>RUT (sin puntos ni guión):</label>
+                <input type="text" name="run" placeholder="Ej: 19011022K" maxlength="9" required>
+                
+                <label>Nombre:</label>
+                <input type="text" name="nombre" maxlength="50" required placeholder="Tu nombre">
+                
+                <label>Apellidos:</label>
+                <input type="text" name="apellidos" maxlength="100" required placeholder="Tus apellidos">
+                
+                <label>Email:</label>
+                <input type="email" name="email" maxlength="100" required placeholder="usuario@mail.com">
+                
+                <label>Fecha de Nacimiento:</label>
+                <input type="date" name="fechaNacimiento">
+                
+                <label>Tipo de Usuario:</label>
+                <select name="tipoUsuario" required>
+                    <option value="">Seleccione...</option>
+                    <option value="cliente">Cliente</option>
+                    <option value="vendedor">Vendedor</option>
+                    <option value="administrador">Administrador</option>
+                </select>
+                
+                <label>Región:</label>
+                <select name="region" required>
+                    <option value="">Seleccione una región</option>
+                </select>
+                
+                <label>Comuna:</label>
+                <select name="comuna" required>
+                    <option value="">Seleccione una comuna</option>
+                </select>
+                
+                <label>Dirección:</label>
+                <input type="text" name="direccion" maxlength="300" required placeholder="Calle, número, depto.">
+                
+                <button type="submit">Registrarse</button>
+                <p>¿Ya tienes cuenta? <a href="login.html">Inicia sesión aquí</a></p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Llevar & Asar - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

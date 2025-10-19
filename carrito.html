@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Carrito - Llevar & Asar</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">Llevar & Asar</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="login.html">Iniciar Sesión</a></li>
+        <li><a href="registro.html">Registro</a></li>
+        <li><a href="carrito.html" class="cart-icon">🛒 <span class="cart-count">0</span></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>🛒 Tu Carrito</h1>
+    <section id="carrito-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Subtotal</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+        <tbody id="carrito-lista">
+          <!-- Aquí se insertan los productos dinámicamente -->
+        </tbody>
+      </table>
+      <h2>Total: $<span id="carrito-total">0</span></h2>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Llevar & Asar - Todos los derechos reservados</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/productos.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

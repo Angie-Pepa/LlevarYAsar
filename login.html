@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - Llevar & Asar</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Llevar & Asar</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="login.html">Iniciar Sesión</a></li>
+                <li><a href="registro.html">Registro</a></li>
+                <li><a href="#" class="cart-icon">🛒 <span class="cart-count">0</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h1>Iniciar Sesión</h1>
+            <p>Ingresa tus datos para acceder a tu cuenta y realizar pedidos.</p>
+            <form id="form-login">
+                <label>Email:</label>
+                <input type="email" name="email" maxlength="100" required placeholder="usuario@mail.com">
+                
+                <label>Contraseña:</label>
+                <input type="password" name="password" required placeholder="••••••">
+                
+                <button type="submit">Iniciar Sesión</button>
+                <p>¿No tienes cuenta? <a href="registro.html">Regístrate aquí</a></p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Llevar & Asar - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
