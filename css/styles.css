@@ -198,6 +198,7 @@ footer {
     margin-left: 5px;
 }
 
+<<<<<<< HEAD
 .carrito-layout {
   display: flex;
   gap: 20px;
@@ -232,6 +233,8 @@ footer {
 }
 
 
+=======
+>>>>>>> d1c7fad31143824a861650f648891f9dac06132e
 /* Responsive */
 @media (max-width: 768px) {
     nav ul {
@@ -247,6 +250,7 @@ footer {
     .product-grid {
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     }
+<<<<<<< HEAD
 }
 
 /* Responsive para productos */
@@ -545,3 +549,6 @@ label input[type="checkbox"] {
   box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 }
 
+=======
+}
+>>>>>>> d1c7fad31143824a861650f648891f9dac06132e

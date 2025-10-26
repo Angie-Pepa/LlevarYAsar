@@ -242,6 +242,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
            });
     }
+<<<<<<< HEAD
 });
 
 // ==========================
@@ -526,4 +527,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   renderCarrito();
+=======
+>>>>>>> d1c7fad31143824a861650f648891f9dac06132e
 });
