@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Llevar & Asar - Los Mejores Cortes para Llevar</title>
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Llevar & Asar - Inicio</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header>
+  <!-- Header -->
+  <header>
     <div class="logo">Llevar & Asar</div>
     <nav>
-        <ul>
+      <ul>
         <li><a href="index.html">Inicio</a></li>
         <li><a href="productos.html">Productos</a></li>
         <li><a href="nosotros.html">Nosotros</a></li>
@@ -19,63 +20,84 @@
         <li><a href="login.html">Iniciar Sesión</a></li>
         <li><a href="registro.html">Registro</a></li>
         <li><a href="carrito.html" class="cart-icon">🛒 <span class="cart-count">0</span></a></li>
-        </ul>
+      </ul>
     </nav>
-    </header>
+  </header>
 
-    <main>
-    <!-- Sección Hero -->
-    <section id="hero">
-        <h1>¡Bienvenidos a Llevar & Asar!</h1>
-        <p>Los mejores cortes, asados y productos cárnicos para llevar. ¡Sabor que se lleva en el alma!</p>
-        <button onclick="location.href='productos.html'">Ver Nuestros Productos</button>
-    </section>
+  <!-- Hero -->
+<section id="hero">
+  <div class="hero__contenido">
+    <h1><span class="resaltado">🔥 Sabor</span> que se <span class="resaltado">lleva</span> y se <span class="resaltado">asa</span></h1>
+    <p>Los mejores cortes y embutidos, directo a tu mesa.</p>
+    <a href="productos.html" class="btn-hero">Ver catálogo</a>
+  </div>
+</section>
 
-    <!-- Productos Destacados -->
-    <section id="featured-products">
-        <h2>Productos Destacados</h2>
-        <div id="productos-container">
-        <p>Cargando productos...</p>
-        </div>
-    </section>
-    </main>
 
-    <footer>
-    <p>&copy; 2025 Llevar & Asar - Todos los derechos reservados | Calidad que se lleva y se asa</p>
-    </footer>
+  <!-- Categorías -->
+  <section id="categorias">
+    <h2>Explora por categoría</h2>
+    <div class="categorias-grid">
+      <div class="categoria">🥩 Cortes Premium</div>
+      <div class="categoria">🌭 Embutidos</div>
+      <div class="categoria">🍖 Combos</div>
+      <div class="categoria">🔥 Parrilladas</div>
+    </div>
+  </section>
 
-    <!-- Scripts -->
-    <script src="js/productos.js"></script>
-    <script src="js/script.js"></script>
-    <script>
-    // Mostrar algunos productos destacados en el index
-    function mostrarDestacados() {
-        const contenedor = document.getElementById('productos-container');
-        if (!contenedor) return;
+  <!-- Productos destacados -->
+  <section id="featured-products">
+    <h2>Productos destacados</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="img/entrania1.jpg" alt="Entraña">
+        <h3>Entraña</h3>
+        <p class="price">$11.990</p>
+        <button class="btn">Agregar al carrito</button>
+      </div>
+      <div class="product-card">
+        <img src="img/chorizos.jpg" alt="Chorizos">
+        <h3>Chorizos Artesanales</h3>
+        <p class="price">$3.990</p>
+        <button class="btn">Agregar al carrito</button>
+      </div>
+      <div class="product-card">
+        <img src="img/parrillada.jpg" alt="Parrillada">
+        <h3>Parrillada Familiar</h3>
+        <p class="price">$24.990</p>
+        <button class="btn">Agregar al carrito</button>
+      </div>
+    </div>
+  </section>
 
-        contenedor.innerHTML = "";
+  <!-- Testimonios -->
+  <section id="testimonios">
+    <h2>Lo que dicen nuestros clientes</h2>
+    <div class="testimonios-grid">
+      <div class="testimonio">
+        <blockquote>"La carne llegó fresca y deliciosa, ¡el asado fue un éxito!"</blockquote>
+        <h4>- Carolina, Santiago</h4>
+      </div>
+      <div class="testimonio">
+        <blockquote>"Excelente atención y productos de primera calidad."</blockquote>
+        <h4>- Felipe, Ñuñoa</h4>
+      </div>
+      <div class="testimonio">
+        <blockquote>"Los combos familiares son perfectos para el fin de semana."</blockquote>
+        <h4>- Marcela, Maipú</h4>
+      </div>
+    </div>
+  </section>
 
-      // Tomar los primeros 3 productos como destacados
-        const destacados = productos.slice(0, 3);
+  <!-- CTA final -->
+  <section id="cta-final">
+    <h2>¿Listo para tu próximo asado?</h2>
+    <a href="productos.html" class="btn-hero">Explorar catálogo</a>
+  </section>
 
-        destacados.forEach(p => {
-        const card = document.createElement("article");
-        card.classList.add("producto");
-
-        card.innerHTML = `
-            <figure class="producto__media">
-            <img src="${p.imagen}" alt="${p.nombre}" style="max-width:200px; border-radius:8px;">
-            </figure>
-            <h3 class="producto__titulo">${p.nombre}</h3>
-            <p class="producto__precio">$${p.precio.toLocaleString('es-CL')}</p>
-            <button onclick="agregarAlCarrito(${p.id})">Agregar al carrito</button>
-        `;
-
-        contenedor.appendChild(card);
-        });
-    }
-
-    document.addEventListener("DOMContentLoaded", mostrarDestacados);
-    </script>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Llevar & Asar - Todos los derechos reservados</p>
+  </footer>
 </body>
 </html>

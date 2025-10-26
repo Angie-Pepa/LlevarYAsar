@@ -198,6 +198,40 @@ footer {
     margin-left: 5px;
 }
 
+.carrito-layout {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.carrito-lista {
+  flex: 3; /* ocupa más espacio */
+}
+
+.carrito-acciones {
+  flex: 1; /* ocupa menos espacio */
+  background: #f8f9fa;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.carrito-acciones h2 {
+  margin-bottom: 15px;
+}
+
+
+#vaciar-carrito {
+  background: hsl(354, 59%, 29%);
+  color: white;
+}
+
+#finalizar-compra {
+  background: #c64848;
+  color: white;
+}
+
+
 /* Responsive */
 @media (max-width: 768px) {
     nav ul {
@@ -214,3 +248,300 @@ footer {
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     }
 }
+
+/* Responsive para productos */
+@media (max-width: 768px) {
+  .producto__contenido {
+    flex-direction: column;   /* Imagen arriba, texto abajo */
+    text-align: center;
+  }
+
+  .producto__media img {
+    margin: 0 auto; /* Centrar imagen */
+  }
+}
+
+/* Ajustar checkbox y texto */
+#invitado {
+  margin-right: 6px;   /* espacio pequeño entre el cuadro y el texto */
+  vertical-align: middle; /* alinear con el texto */
+}
+
+label input[type="checkbox"] {
+  margin: 0 6px 0 0; /* elimina márgenes raros y deja solo un espacio a la derecha */
+}
+
+/* Contenedor horizontal de cada producto */
+.producto__contenido {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem; /* espacio entre imagen y texto */
+  margin-bottom: 1.5rem;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* Imagen */
+.producto__media img {
+  max-width: 200px;
+  border-radius: 8px;
+}
+
+/* Texto */
+.producto__info {
+  flex: 1;
+}
+
+.producto__titulo {
+  margin-top: 0;
+  color: #8B0000;
+}
+
+.producto__descripcion {
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+/* Hero */
+#hero {
+  background: url("img/asado.jpg") center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 8rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+#hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55); /* oscurece la imagen para resaltar el texto */
+}
+
+.hero__contenido {
+  position: relative;
+  z-index: 1;
+  background: rgba(255,255,255,0.05);
+  padding: 2rem 3rem;
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.hero__contenido h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.hero__contenido .resaltado {
+  color: #FFD700; /* dorado */
+  text-shadow: 0 0 10px rgba(255,215,0,0.8);
+}
+
+.hero__contenido p {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  color: #f5f5f5;
+}
+
+.btn-hero {
+  display: inline-block;
+  padding: 0.9rem 1.8rem;
+  background: #D2691E;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-hero:hover {
+  background: #A0522D;
+  transform: scale(1.05);
+}
+
+/* Animación */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Productos destacados */
+#featured-products {
+  padding: 3rem 1rem;
+  text-align: center;
+}
+#productos-container {
+  display: flex;
+  flex-direction: column; /* lista vertical */
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+#productos-container .producto {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* Testimonios */
+#testimonios {
+  background: #f9f9f9;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+#testimonios blockquote {
+  font-style: italic;
+  margin: 1rem auto;
+  max-width: 600px;
+  color: #555;
+}
+
+/* CTA final */
+#cta-final {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: #8B0000;
+  color: white;
+}
+#cta-final h2 {
+  margin-bottom: 1rem;
+}
+
+#testimonios {
+  background: #f9f9f9;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+#testimonios h2 {
+  margin-bottom: 2rem;
+  color: #8B0000;
+}
+
+.testimonios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.testimonio {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  font-style: italic;
+  color: #333;
+}
+
+.testimonio h4 {
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #555;
+}
+
+
+/* Efecto hover en cada producto */
+.producto__contenido {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.producto__contenido:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+/* Efecto zoom en la imagen */
+.producto__media img {
+  transition: transform 0.3s ease;
+}
+
+.producto__contenido:hover .producto__media img {
+  transform: scale(1.05);
+}
+
+/* Separadores entre productos */
+.producto {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 1rem;
+  background: #fff;
+  transition: box-shadow 0.3s ease;
+}
+
+.producto:not(:last-child) {
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #f5f5f5;
+}
+
+/* Botón animado */
+.producto__btn {
+  background: #D2691E;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.producto__btn:hover {
+  background: #A0522D;
+  transform: scale(1.05);
+}
+
+.producto__btn:active {
+  transform: scale(0.95);
+}
+
+/* Etiquetas de categoría */
+.producto__categoria {
+  display: inline-block;
+  background: #8B0000;
+  color: white;
+  font-size: 0.8rem;
+  padding: 4px 10px;
+  border-radius: 12px;
+  margin-bottom: 0.5rem;
+}
+/* Categorías */
+#categorias {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.categorias-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.categoria {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  color: #8B0000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.categoria:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+

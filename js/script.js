@@ -244,7 +244,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-
 // ==========================
 // Inicialización del carrito
 // ==========================
@@ -263,6 +262,8 @@ function agregarAlCarrito(id) {
   } else {
     carrito.push({ ...producto, cantidad: 1 });
   }
+
+  localStorage.setItem("carrito", JSON.stringify(carrito)); // 👈 guardar
   renderCarrito();
 }
 
@@ -289,16 +290,12 @@ function finalizarCompra() {
     return;
   }
 
-  // Guardamos un mensaje en localStorage para mostrarlo en la siguiente página
-  localStorage.setItem("mensajeCompra", "✅ ¡Gracias por tu compra! Tu pedido ha sido procesado con éxito.");
+  // Guardamos el total en localStorage para mostrarlo en pago.html
+  const total = carrito.reduce((acc, p) => acc + p.precio * p.cantidad, 0);
+  localStorage.setItem("totalCompra", total);
 
-  // Vaciar carrito después de la compra
-  carrito = [];
-  localStorage.removeItem("carrito");
-  renderCarrito();
-
-  // Redirigir al usuario
-  window.location.href = "index.html"; 
+  // Redirigir a la página de pago
+  window.location.href = "pago.html";
 }
 
 // ==========================
@@ -307,6 +304,47 @@ function finalizarCompra() {
 function renderCarrito() {
   // Guardar carrito en localStorage
   localStorage.setItem("carrito", JSON.stringify(carrito));
+
+  // Conectar botones al cargar la página
+document.addEventListener("DOMContentLoaded", () => {
+  renderCarrito();
+
+  const btnVaciar = document.getElementById("vaciar-carrito");
+  if (btnVaciar) {
+    btnVaciar.addEventListener("click", vaciarCarrito);
+  }
+
+  const btnFinalizar = document.getElementById("finalizar-compra");
+  if (btnFinalizar) {
+    btnFinalizar.addEventListener("click", finalizarCompra);
+  }
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("DOMContentLoaded en carrito.html"); // 👈 verificación
+
+  renderCarrito();
+
+  const btnVaciar = document.getElementById("vaciar-carrito");
+  const btnFinalizar = document.getElementById("finalizar-compra");
+
+  console.log("Botones encontrados:", { btnVaciar, btnFinalizar }); // 👈 verificación
+
+  if (btnVaciar) {
+    btnVaciar.addEventListener("click", () => {
+      console.log("Click en Vaciar carrito"); // 👈 verificación
+      vaciarCarrito();
+    });
+  }
+
+  if (btnFinalizar) {
+    btnFinalizar.addEventListener("click", () => {
+      console.log("Click en Finalizar compra"); // 👈 verificación
+      finalizarCompra();
+    });
+  }
+});
 
   // Actualizar numerito del ícono 🛒
   const contador = document.querySelector(".cart-count");
@@ -347,74 +385,145 @@ function renderCarritoDetalle() {
 }
 
 // ==========================
+// Renderizado del checkout (pago.html)
+// ==========================
+function renderCheckout() {
+  const lista = document.getElementById("checkout-lista");
+  const totalEl = document.getElementById("total-pago");
+  if (!lista || !totalEl) return;
+
+  lista.innerHTML = "";
+  let total = 0;
+
+  carrito.forEach(p => {
+    const fila = document.createElement("tr");
+    const subtotal = p.precio * p.cantidad;
+    total += subtotal;
+
+    fila.innerHTML = `
+      <td>${p.nombre}</td>
+      <td>$${p.precio.toLocaleString('es-CL')}</td>
+      <td>${p.cantidad}</td>
+      <td>$${subtotal.toLocaleString('es-CL')}</td>
+    `;
+
+    lista.appendChild(fila);
+  });
+
+  totalEl.textContent = total.toLocaleString('es-CL');
+}
+
+// ==========================
 // Renderizado de productos
 // ==========================
 function mostrarProductos() {
   const contenedor = document.getElementById('productos-container');
-  if (!contenedor) return; // seguridad por si no existe el div en otra página
+  if (!contenedor) return;
 
   contenedor.innerHTML = '';
 
   productos.forEach(p => {
     const card = document.createElement('article');
     card.classList.add('producto');
-
-    card.innerHTML = `
-      <figure class="producto__media">
-        <img src="${p.imagen}" alt="${p.nombre}" style="max-width:200px; border-radius:8px;">
-      </figure>
+card.innerHTML = `
+  <div class="producto__contenido">
+    <figure class="producto__media">
+      <img src="${p.imagen}" alt="${p.nombre}">
+    </figure>
+    <div class="producto__info">
+      <span class="producto__categoria">${p.categoria}</span>
       <h3 class="producto__titulo">${p.nombre}</h3>
       <p class="producto__descripcion">${p.descripcion}</p>
       <p class="producto__precio">$${p.precio.toLocaleString('es-CL')}</p>
       <p>Stock: ${p.stock} ${p.stock <= p.stockCritico ? '⚠' : ''}</p>
       <button class="producto__btn" onclick="agregarAlCarrito(${p.id})">Agregar al carrito</button>
-    `;
-
+    </div>
+  </div>
+`;
     contenedor.appendChild(card);
   });
 }
+
 
 // ==========================
 // Inicialización al cargar
 // ==========================
 document.addEventListener("DOMContentLoaded", () => {
-  mostrarProductos();   // si estamos en productos.html
-  renderCarrito();      // siempre actualiza el numerito y carrito.html
+  // Mostrar productos si estamos en productos.html
+  mostrarProductos();
+  card.innerHTML = `
+  <div class="producto__contenido">
+    <figure class="producto__media">
+      <img src="${p.imagen}" alt="${p.nombre}">
+    </figure>
+    <div class="producto__info">
+      <span class="producto__categoria">${p.categoria}</span>
+      <h3 class="producto__titulo">${p.nombre}</h3>
+      <p class="producto__descripcion">${p.descripcion}</p>
+      <p class="producto__precio">$${p.precio.toLocaleString('es-CL')}</p>
+      <p>Stock: ${p.stock} ${p.stock <= p.stockCritico ? '⚠' : ''}</p>
+      <button class="producto__btn" onclick="agregarAlCarrito(${p.id})">Agregar al carrito</button>
+    </div>
+  </div>
+`;
 
-  // Activar botones en carrito.html
+
+  // Siempre actualizar numerito y carrito
+  renderCarrito();
+
+  // Botones en carrito.html
   const btnVaciar = document.getElementById("vaciar-carrito");
-  if (btnVaciar) {
-    btnVaciar.addEventListener("click", vaciarCarrito);
-  }
+  if (btnVaciar) btnVaciar.addEventListener("click", vaciarCarrito);
 
   const btnFinalizar = document.getElementById("finalizar-compra");
-  if (btnFinalizar) {
-    btnFinalizar.addEventListener("click", finalizarCompra);
+  if (btnFinalizar) btnFinalizar.addEventListener("click", finalizarCompra);
+
+  // Checkout (checkout.html)
+  const formCheckout = document.getElementById("form-checkout");
+  if (formCheckout) {
+    formCheckout.addEventListener("submit", (e) => {
+      e.preventDefault();
+      alert("✅ ¡Compra confirmada! Gracias por tu pedido.");
+      carrito = [];
+      localStorage.removeItem("carrito");
+      renderCarrito();
+      window.location.href = "index.html";
+    });
   }
 
-  // Mostrar mensaje de compra si existe
-  const mensaje = localStorage.getItem("mensajeCompra");
-  if (mensaje) {
-    const banner = document.getElementById("mensaje-banner");
-    const texto = document.getElementById("mensaje-texto");
-    const cerrar = document.getElementById("cerrar-banner");
-
-    if (banner && texto && cerrar) {
-      texto.textContent = mensaje;
-      banner.style.display = "flex";
-
-      cerrar.addEventListener("click", () => {
-        banner.style.display = "none";
-      });
-
-      // Ocultar automáticamente después de 5 segundos
-      setTimeout(() => {
-        banner.style.display = "none";
-      }, 5000);
-    } else {
-      alert(mensaje); // fallback si no existe el banner
-    }
-
-    localStorage.removeItem("mensajeCompra"); // limpiar para que no se repita
+  // Pago (pago.html)
+  const formPago = document.getElementById("form-pago");
+  if (formPago) {
+    renderCheckout(); // mostrar resumen del carrito
+    formPago.addEventListener("submit", (e) => {
+      e.preventDefault();
+      alert("✅ Pago realizado con éxito. ¡Gracias por tu compra!");
+      carrito = [];
+      localStorage.removeItem("carrito");
+      renderCarrito();
+      window.location.href = "index.html";
+    });
   }
+
+  // Invitado en pago.html
+  const invitadoCheck = document.getElementById("invitado");
+  const usuarioInput = document.getElementById("usuario");
+  const passwordInput = document.getElementById("password");
+  if (invitadoCheck && usuarioInput && passwordInput) {
+    invitadoCheck.addEventListener("change", () => {
+      if (invitadoCheck.checked) {
+        usuarioInput.disabled = true;
+        passwordInput.disabled = true;
+        usuarioInput.value = "";
+        passwordInput.value = "";
+      } else {
+        usuarioInput.disabled = false;
+        passwordInput.disabled = false;
+      }
+    });
+  }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  renderCarrito();
 });

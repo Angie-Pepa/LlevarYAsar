@@ -24,22 +24,33 @@
 
   <main>
     <h1>🛒 Tu Carrito</h1>
-    <section id="carrito-container">
-      <table>
-        <thead>
-          <tr>
-            <th>Producto</th>
-            <th>Precio</th>
-            <th>Cantidad</th>
-            <th>Subtotal</th>
-            <th>Acción</th>
-          </tr>
-        </thead>
-        <tbody id="carrito-lista">
-          <!-- Aquí se insertan los productos dinámicamente -->
-        </tbody>
-      </table>
-      <h2>Total: $<span id="carrito-total">0</span></h2>
+    <section id="carrito-container" class="carrito-layout">
+      
+      <!-- Lista de productos -->
+      <div class="carrito-lista">
+        <table>
+          <thead>
+            <tr>
+              <th>Producto</th>
+              <th>Precio</th>
+              <th>Cantidad</th>
+              <th>Subtotal</th>
+              <th>Acción</th>
+            </tr>
+          </thead>
+          <tbody id="carrito-lista">
+            <!-- Aquí se insertan los productos dinámicamente -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Barra lateral de acciones -->
+      <aside class="carrito-acciones">
+        <h2>Total: $<span id="carrito-total">0</span></h2>
+        <button id="vaciar-carrito">Vaciar carrito</button>
+        <button id="finalizar-compra">Finalizar compra</button>
+      </aside>
+
     </section>
   </main>
 

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout - Llevar & Asar</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Finalizar Compra</h1>
+  </header>
+
+  <main>
+    <form id="form-checkout">
+      <label>Nombre completo:
+        <input type="text" name="nombre" required maxlength="100">
+      </label><br>
+
+      <label>Correo electrónico:
+        <input type="email" name="email" required maxlength="100">
+      </label><br>
+
+      <label>Dirección de envío:
+        <input type="text" name="direccion" required maxlength="200">
+      </label><br>
+
+      <label>Teléfono:
+        <input type="tel" name="telefono" required maxlength="15">
+      </label><br>
+
+      <label>Método de pago:
+        <select name="pago" required>
+          <option value="">Seleccione</option>
+          <option value="tarjeta">Tarjeta de crédito/débito</option>
+          <option value="transferencia">Transferencia bancaria</option>
+          <option value="efectivo">Efectivo contra entrega</option>
+        </select>
+      </label><br>
+
+      <button type="submit">Confirmar compra</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Llevar & Asar</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
