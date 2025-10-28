@@ -220,3 +220,28 @@ section { margin-inline: auto; max-width: 1200px; }
   .product-grid { grid-template-columns: 1fr; }
   .hero__contenido h1 { font-size: 2.2rem; }
 }
+
+/* --- Parche Inicio (ajustes visuales) --- */
+nav a.is-active { background: rgba(255,255,255,0.22); }
+
+#hero {
+  /* fallback si falta img/asado.jpg */
+  background: url("img/asado.jpg") center/cover no-repeat, 
+              radial-gradient(1000px 500px at 20% -20%, rgba(255,215,0,0.15), transparent 60%),
+              radial-gradient(1000px 500px at 120% 0%, rgba(210,105,30,0.12), transparent 60%),
+              #4B0000;
+  min-height: 52vh;
+}
+.hero__contenido { max-width: 900px; }
+.hero__contenido h1 { word-wrap: break-word; }
+
+section { margin-inline: auto; max-width: 1200px; }
+
+/* Si por cualquier motivo no se aplica el bg del hero, asegura contraste */
+#hero::after { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,0.35); }
+#hero .hero__contenido { position: relative; z-index: 1; }
+
+@media (max-width: 480px) {
+  .product-grid { grid-template-columns: 1fr; }
+  .hero__contenido h1 { font-size: 2.2rem; }
+}
