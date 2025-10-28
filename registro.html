@@ -14,11 +14,11 @@
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="productos.html">Productos</a></li>
                 <li><a href="nosotros.html">Nosotros</a></li>
-                <li><a href="blog.html">Blog</a></li>
+                <li><a href="blogs.html">Blog</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
                 <li><a href="login.html">Iniciar Sesión</a></li>
-                <li><a href="registro.html">Registro</a></li>
-                <li><a href="#" class="cart-icon">🛒 <span class="cart-count">0</span></a></li>
+                <li><a href="registro.html" class="is-active">Registro</a></li>
+                <li><a href="carrito.html" class="cart-icon">🛒 <span class="cart-count">0</span></a></li>
             </ul>
         </nav>
     </header>
@@ -27,6 +27,7 @@
         <section>
             <h1>Registro de Usuario</h1>
             <p>Regístrate para realizar pedidos, guardar tus datos y acceder a promociones exclusivas.</p>
+            
             <form id="form-usuario">
                 <label>RUT (sin puntos ni guión):</label>
                 <input type="text" name="run" placeholder="Ej: 19011022K" maxlength="9" required>
@@ -43,14 +44,8 @@
                 <label>Fecha de Nacimiento:</label>
                 <input type="date" name="fechaNacimiento">
                 
-                <label>Tipo de Usuario:</label>
-                <select name="tipoUsuario" required>
-                    <option value="">Seleccione...</option>
-                    <option value="cliente">Cliente</option>
-                    <option value="vendedor">Vendedor</option>
-                    <option value="administrador">Administrador</option>
-                </select>
-                
+                <!-- 🔥 Eliminado campo de Tipo de Usuario (siempre será cliente) -->
+
                 <label>Región:</label>
                 <select name="region" required>
                     <option value="">Seleccione una región</option>
