@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Detalle Blog - Llevar & Asar</title>
+  <link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body>
+  <header>
+    <div class="logo">Llevar & Asar</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="carrito.html" class="cart-icon">🛒 <span class="cart-count">0</span></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="detalle-blog">
+      <h1 id="titulo">Cargando…</h1>
+      <p id="intro"></p>
+      <img id="imagen" alt="" style="max-width:100%; border-radius:8px; margin:1rem 0;" />
+      <article id="contenido"></article>
+      <p style="margin-top:1.5rem;">
+        <a href="blog.html" class="btn">← Volver al Blog</a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Llevar & Asar - Todos los derechos reservados</p>
+  </footer>
+
+  <script>
+    const posts = {
+      "1": {
+        titulo: "Receta Chilena de Anticuchos",
+        intro: "El clásico de la parrilla con toques caseros.",
+        imagen: "img/blog1.jpg",
+        contenido: `
+          <p>Para unos anticuchos perfectos, alterna carne, longaniza, cebolla y pimentón en trozos homogéneos.</p>
+          <p>Marina con ajo, orégano, ají de color, comino, aceite y un toque de cerveza por 2 horas.</p>
+          <p>Asa a brasas medias, girando cada 2–3 minutos hasta dorar.</p>
+        `
+      },
+      "2": {
+        titulo: "Asado + Chorizos: La Combinación Perfecta",
+        intro: "Arma la parrillada ideal con equilibrio de grasas y tiempos de cocción.",
+        imagen: "img/blog2.jpg",
+        contenido: `
+          <p>Comienza por cortes más gruesos y suma chorizos en el último tercio de cocción.</p>
+          <p>Evita pincharlos para que no pierdan jugos.</p>
+          <p>Acompaña con pebre y pan tostado.</p>
+        `
+      },
+      "3": {
+        titulo: "Ensalada Chilena",
+        intro: "Frescura que realza la carne.",
+        imagen: "img/ensalada-chilena.jpg",
+        contenido: `
+          <p>Tomate pelado, cebolla pluma desaladas y cilantro fresco. Sal, aceite y limón.</p>
+          <p>Reposa 10–15 minutos antes de servir.</p>
+        `
+      },
+      "4": {
+        titulo: "Ensalada César con un toque especial",
+        intro: "Clásico con personalidad.",
+        imagen: "img/ensalada-cesar.jpg",
+        contenido: `
+          <p>Lechuga romana, crutones, parmesano. Aderezo con anchoas, ajo, limón y aceite.</p>
+          <p>Agrega pollo a la parrilla si quieres proteína.</p>
+        `
+      },
+      "6": {
+        titulo: "Ensalada Caprese",
+        intro: "Sencilla y elegante.",
+        imagen: "img/ensalada-caprese.jpg",
+        contenido: `
+          <p>Tomate, mozzarella, albahaca y reducción de balsámico. Sal y aceite de oliva.</p>
+        `
+      },
+      "7": {
+        titulo: "Asado de Tira a la Parrilla",
+        intro: "Jugoso y lleno de sabor.",
+        imagen: "img/asado-tira.jpg",
+        contenido: `
+          <p>Fuego medio-bajo y paciencia. Sellar primero, luego cocinar lento para ablandar fibras.</p>
+          <p>Sal gruesa al final para conservar jugos.</p>
+        `
+      }
+    };
+
+    function cargarPost() {
+      const params = new URLSearchParams(location.search);
+      const id = params.get('id');
+      const p = posts[id];
+      const year = document.getElementById('year');
+      if (year) year.textContent = new Date().getFullYear();
+
+      if (!p) {
+        document.getElementById('titulo').textContent = "Entrada no encontrada";
+        document.getElementById('intro').textContent = "El artículo solicitado no existe.";
+        return;
+      }
+      document.getElementById('titulo').textContent = p.titulo;
+      document.getElementById('intro').textContent = p.intro;
+      const img = document.getElementById('imagen');
+      img.src = p.imagen; img.alt = p.titulo;
+      document.getElementById('contenido').innerHTML = p.contenido;
+    }
+
+    document.addEventListener('DOMContentLoaded', cargarPost);
+  </script>
+</body>
+</html>
