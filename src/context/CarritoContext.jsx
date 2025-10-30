@@ -1,7 +1,15 @@
 // src/context/CarritoContext.jsx
-import { createContext, useState, useEffect } from 'react';
+import { createContext, useState, useEffect, useContext } from 'react';
 
 export const CarritoContext = createContext();
+
+export function useCarrito() {
+    const context = useContext(CarritoContext);
+    if (!context) {
+        throw new Error('useCarrito debe ser usado dentro de CarritoProvider');
+    }
+    return context;
+}
 
 export function CarritoProvider({ children }) {
     const [carrito, setCarrito] = useState(() => {

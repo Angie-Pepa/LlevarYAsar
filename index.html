@@ -1,113 +1,12 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Llevar & Asar - Inicio</title>
-  <link rel="stylesheet" href="css/styles.css" />
-</head>
-<body>
-  <!-- Header -->
-  <header>
-    <div class="logo">Llevar & Asar</div>
-    <nav>
-      <ul>
-        <li><a href="index.html" class="is-active">Inicio</a></li>
-        <li><a href="productos.html">Productos</a></li>
-        <li><a href="nosotros.html">Nosotros</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-        <li><a href="login.html">Iniciar Sesión</a></li>
-        <li><a href="registro.html">Registro</a></li>
-        <li><a href="carrito.html" class="cart-icon">🛒 <span class="cart-count">0</span></a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- Hero -->
-  <section id="hero" aria-label="Hero">
-    <div class="hero__contenido">
-      <h1><span class="resaltado">🔥 Sabor</span> que se <span class="resaltado">lleva</span> y se <span class="resaltado">asa</span></h1>
-      <p>Los mejores cortes y embutidos, directo a tu mesa.</p>
-      <a href="productos.html" class="btn-hero">Ver catálogo</a>
-    </div>
-  </section>
-
-  <main>
-    <!-- Categorías -->
-    <section id="categorias" aria-label="Categorías">
-      <h2>Explora por categoría</h2>
-      <div class="categorias-grid">
-        <div class="categoria">🥩 Cortes Premium</div>
-        <div class="categoria">🌭 Embutidos</div>
-        <div class="categoria">🍖 Combos</div>
-        <div class="categoria">🔥 Parrilladas</div>
-      </div>
-    </section>
-
-    <!-- Productos destacados (estáticos) -->
-    <section id="featured-products" aria-label="Productos destacados">
-      <h2>Productos destacados</h2>
-      <div class="product-grid">
-        <article class="product-card">
-          <img src="img/entrania1.jpg" alt="Entraña" />
-          <h3>Entraña</h3>
-          <p class="price">$11.990</p>
-          <button class="btn" onclick="location.href='productos.html'">Agregar al carrito</button>
-        </article>
-        <article class="product-card">
-          <img src="img/chorizos.jpg" alt="Chorizos artesanales" />
-          <h3>Chorizos Artesanales</h3>
-          <p class="price">$3.990</p>
-          <button class="btn" onclick="location.href='productos.html'">Agregar al carrito</button>
-        </article>
-        <article class="product-card">
-          <img src="img/parrillada.jpg" alt="Parrillada familiar" />
-          <h3>Parrillada Familiar</h3>
-          <p class="price">$24.990</p>
-          <button class="btn" onclick="location.href='productos.html'">Agregar al carrito</button>
-        </article>
-      </div>
-    </section>
-
-    <!-- Testimonios -->
-    <section id="testimonios" aria-label="Testimonios">
-      <h2>Lo que dicen nuestros clientes</h2>
-      <div class="testimonios-grid">
-        <div class="testimonio">
-          <blockquote>"La carne llegó fresca y deliciosa, ¡el asado fue un éxito!"</blockquote>
-          <h4>- Carolina, Santiago</h4>
-        </div>
-        <div class="testimonio">
-          <blockquote>"Excelente atención y productos de primera calidad."</blockquote>
-          <h4>- Felipe, Ñuñoa</h4>
-        </div>
-        <div class="testimonio">
-          <blockquote>"Los combos familiares son perfectos para el fin de semana."</blockquote>
-          <h4>- Marcela, Maipú</h4>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA final -->
-    <section id="cta-final" aria-label="Llamado a la acción">
-      <h2>¿Listo para tu próximo asado?</h2>
-      <a href="productos.html" class="btn-hero">Explorar catálogo</a>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; <span id="year"></span> Llevar & Asar - Todos los derechos reservados</p>
-  </footer>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const y = document.getElementById('year');
-      if (y) y.textContent = new Date().getFullYear();
-    });
-  </script>
-  <!-- Cuando actives lógica de catálogo/carrito, respeta este orden: -->
-  <!-- <script src="js/productos.js" defer></script> -->
-  <!-- <script src="js/app.js" defer></script> -->
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Llevar & Asar - Tienda de Carnes</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>

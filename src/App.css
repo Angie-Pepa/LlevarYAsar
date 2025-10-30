@@ -25,9 +25,7 @@ nav a {
 nav a:hover, nav a.is-active { background: rgba(255,255,255,0.2); }
 
 /* Layout general */
-main { 
-  padding: 2rem;
-}
+main { padding: 2rem; max-width: 1200px; margin: 0 auto; }
 section {
   background: #fff; padding: 2rem; border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.08); margin-bottom: 2rem;

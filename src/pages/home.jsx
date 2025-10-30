@@ -1,11 +1,14 @@
-// src/pages/Home.jsx
+// src/pages/home.jsx
 import { Link } from 'react-router-dom';
+import { useCarrito } from '../context/CarritoContext';
 import { productos } from '../data/productos';
 
 export function Home() {
+    const { agregarAlCarrito } = useCarrito();
+    
     return (
     <>
-      {/* Hero - FUERA de main, como en el original */}
+      {/* Hero */}
       <section id="hero" aria-label="Hero">
         <div className="hero__contenido">
             <h1><span className="resaltado">🔥 Sabor</span> que se <span className="resaltado">lleva</span> y se <span className="resaltado">asa</span></h1>
@@ -35,7 +38,7 @@ export function Home() {
                   <img src={producto.imagen} alt={producto.nombre} />
                   <h3>{producto.nombre}</h3>
                   <p className="price">${producto.precio.toLocaleString('es-CL')}</p>
-                  <button className="btn" onClick={() => window.location.href='/productos'}>Agregar al carrito</button>
+                  <button className="btn" onClick={() => agregarAlCarrito(producto)}>Agregar al carrito</button>
               </article>
               ))}
           </div>
