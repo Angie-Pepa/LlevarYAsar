@@ -10,6 +10,7 @@ import Admin from './pages/Admin';
 import { Nosotros } from './pages/Nosotros';
 import { Blog } from './pages/Blog';
 import { Contacto } from './pages/Contacto';
+import { Carrito } from './pages/Carrito';
 import { CarritoProvider } from './context/CarritoContext';
 import './App.css';
 
@@ -26,6 +27,7 @@ export default function App() {
           <Route path="/contacto" element={<Contacto />} />
           <Route path="/registro" element={<Registro />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/carrito" element={<Carrito />} />
           <Route path="/admin" element={<Admin />} />
         </Routes>
         <Footer />
